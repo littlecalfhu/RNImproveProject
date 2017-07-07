@@ -2,6 +2,7 @@
  * Created by huyifan on 2017/6/29.
  */
 import * as types from '../constants/LoginActions'
+import {Actions,ActionConst} from 'react-native-router-flux'
 export function SubmitLogin(username,password) {
     return async (dispatch,getState) =>{
         let myHeaders = new Headers();

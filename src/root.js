@@ -5,7 +5,7 @@ import {Provider} from 'react-redux'
 import React,{Component} from 'react'
 import store from './store/configurestore'
 import {Text,View} from 'react-native'
-import LoginContainer from './containers/loginContainers'
+import App from './containers/app'
 export default class Root extends Component{
     constructor(props){
         super(props);
@@ -19,7 +19,7 @@ export default class Root extends Component{
     render(){
         return(
             <Provider store={this.state.store}>
-                <LoginContainer/>
+                <App/>
             </Provider>
         )
     }

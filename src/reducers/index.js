@@ -3,8 +3,10 @@
  */
 import {combineReducers} from 'redux-immutable'
 import login from './loginreducer'
+import routes from './routes'
 const appReducer = combineReducers({
-    login: login
-})
+    login: login,
+    routes: routes
+});
 
 export default appReducer;
