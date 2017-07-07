@@ -12,9 +12,11 @@ class app extends Component{
         super(props);
     }
     render(){
-        <RouterWithRedux >
-            <Scene key="login" component={LoginContainers}></Scene>
-        </RouterWithRedux>
+        return(
+            <RouterWithRedux hideTabBar>
+                <Scene hideTabBar key="login" component={LoginContainers}></Scene>
+            </RouterWithRedux>
+        )
     }
 }
 

@@ -10,6 +10,7 @@
     "immutable": "^3.8.1",
     "koa": "2.0.0",
     "koa-router": "7.0.0",
+    "native-base": "^2.2.0",
     "react": "16.0.0-alpha.12",
     "react-native": "0.45.1",
     "react-native-router-flux": "^3.41.0",
@@ -21,6 +22,7 @@
     "redux-persist": "^4.5.0",
     "redux-persist-immutable": "^4.2.0",
     "redux-persist-transform-immutable": "^4.2.0",
+    "redux-saga": "^0.15.4",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {

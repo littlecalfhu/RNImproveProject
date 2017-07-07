@@ -9,7 +9,7 @@ import Actions from '../actions'
 class LoginContainers extends Component{
     render(){
         return(
-            <Login login={this.props.login} actions={this.props.actions}/>
+            <Login login={this.props.login} actions={this.props.actions} store = {this.props.store}/>
         );
     }
 }

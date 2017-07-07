@@ -3,22 +3,22 @@
  */
 import React,{Component} from 'react'
 import {TextInput,TouchableHighlight,View,Text,StyleSheet} from 'react-native'
-
+import * as types from '../constants/LoginActions'
+import {Button,Form,Input,Container,Header,Content,Item} from 'native-base'
+import store from '../store/configurestore'
 export default class Login extends Component{
     constructor(props){
         super(props);
         this.state={
-            username:'',
-            password:''
+            phone:''
         }
     }
 
-    handlePress(){
-        if(this.state.username && this.state.password){
-            this.props.actions.SubmitLogin(this.state.username,this.state.password);
-        }else{
-            console.log('请输入用户名，密码');
-        }
+    handlePress() {
+        this.props.actions.getPhone(this.state.phone)
+    }
+    handleLoginCodePress(){
+      this.props.actions.getLoginCode(this.state.phone);
     }
     showText(){
         return this.props.login.get('shoeText')?(
@@ -27,34 +27,41 @@ export default class Login extends Component{
     }
     render(){
         return(
-            <View style={styles.view}>
-                <Text style={styles.text}>用户名</Text>
-                <TextInput onChangeText={(text)=>{this.setState({username:text})}} style={styles.textInput}></TextInput>
-                <Text style={styles.text}>密码</Text>
-                <TextInput onChangeText={(text)=>{this.setState({password:text})}} style={styles.textInput}></TextInput>
-                <TouchableHighlight onPress={this.handlePress.bind(this)}>
-                    <Text>确定</Text>
-                </TouchableHighlight>
-                {
-                    this.showText()
-                }
-            </View>
+            <Container style={{paddingTop:50}}>
+                <Content>
+                    <Form>
+                        <Item>
+                            <Input  placeholder="请输入手机号" onChangeText={(text)=>{this.setState({phone:text})}}></Input>
+                        </Item>
+                        <Item>
+                            <Input  placeholder="请输入验证码" onChangeText={(text)=>{this.setState({password:text})}}></Input>
+                            <Button onPress={this.handleLoginCodePress.bind(this)}>
+                                <Text>获取验证码</Text>
+                            </Button>
+                        </Item>
+                        <TouchableHighlight onPress={this.handlePress.bind(this)}>
+                            <Text>确定</Text>
+                        </TouchableHighlight>
+                        {
+                            this.showText()
+                        }
+                    </Form>
+                </Content>
+            </Container>
         )
     }
 }
 const styles = StyleSheet.create({
-    view:{
-    },
-    text:{
-        width:100,
-        height:50,
-        marginBottom:10,
-        padding:10
+    container:{
+        flex:1,
+        justifyContent:"center",
+        alignItems:"flex-start",
+        width:500,
     },
     textInput:{
-        height:50,
+        flex:1,
         width:500,
-        marginBottom:10,
-        padding:10
+        height:50,
+        lineHeight:50
     }
 })
