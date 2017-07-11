@@ -13,7 +13,7 @@ class app extends Component{
     }
     render(){
         return(
-            <RouterWithRedux hideTabBar>
+            <RouterWithRedux  hideNavBar={true}>
                 <Scene hideTabBar key="login" component={LoginContainers}></Scene>
             </RouterWithRedux>
         )

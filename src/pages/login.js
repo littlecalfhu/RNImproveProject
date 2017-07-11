@@ -27,7 +27,7 @@ export default class Login extends Component{
     }
     render(){
         return(
-            <Container style={{paddingTop:50}}>
+            <Container>
                 <Content>
                     <Form>
                         <Item>
@@ -39,9 +39,9 @@ export default class Login extends Component{
                                 <Text>获取验证码</Text>
                             </Button>
                         </Item>
-                        <TouchableHighlight onPress={this.handlePress.bind(this)}>
-                            <Text>确定</Text>
-                        </TouchableHighlight>
+                            <Button onPress={this.handlePress.bind(this)} style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+                                <Text style={{textAlign:'center'}}>登录</Text>
+                            </Button>
                         {
                             this.showText()
                         }
@@ -52,16 +52,13 @@ export default class Login extends Component{
     }
 }
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:"center",
-        alignItems:"flex-start",
-        width:500,
+    input:{
+        borderRightColor:'#cccccc',
+        borderRightWidth:1
     },
-    textInput:{
+    normal:{
         flex:1,
-        width:500,
-        height:50,
-        lineHeight:50
+        justifyContent:'center',
+        alignItems:'center'
     }
 })
