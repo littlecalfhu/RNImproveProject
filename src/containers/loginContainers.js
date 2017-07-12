@@ -5,7 +5,7 @@ import React,{Component}from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import Login from '../pages/login'
-import Actions from '../actions'
+import ActionTypes from '../actions'
 class LoginContainers extends Component{
     render(){
         return(
@@ -22,7 +22,7 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps = (dispatch)=>{
     return{
-        actions:bindActionCreators(Actions,dispatch)
+        actions:bindActionCreators(ActionTypes,dispatch)
     }
 }
 

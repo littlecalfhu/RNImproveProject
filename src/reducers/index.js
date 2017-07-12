@@ -4,9 +4,11 @@
 import {combineReducers} from 'redux-immutable'
 import login from './loginreducer'
 import routes from './routes'
+import home from './homeReducer'
 const appReducer = combineReducers({
     login: login,
-    routes: routes
+    routes: routes,
+    home:home
 });
 
 export default appReducer;

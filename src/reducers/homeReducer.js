@@ -4,7 +4,7 @@
 import Immutable,{Map,List} from 'immutable'
 import * as types from '../constants/HomeActions'
 const initState = Map({
-    homeMessage:''
+    homeMessage:'nihao'
 });
 export default function home(state = initState,action) {
     switch (action.type){

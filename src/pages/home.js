@@ -16,7 +16,7 @@ export default class Home extends Component{
             <Container>
                 <Content>
                     <Text>
-                        hello world
+                        {this.props.home.homeMessage}
                     </Text>
                 </Content>
             </Container>

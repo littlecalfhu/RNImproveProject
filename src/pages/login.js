@@ -6,6 +6,7 @@ import {TextInput,TouchableHighlight,View,Text,StyleSheet} from 'react-native'
 import * as types from '../constants/LoginActions'
 import {Button,Form,Input,Container,Header,Content,Item} from 'native-base'
 import store from '../store/configurestore'
+import Actions from 'react-native-router-flux'
 export default class Login extends Component{
     constructor(props){
         super(props);
@@ -15,7 +16,8 @@ export default class Login extends Component{
     }
 
     handlePress() {
-        this.props.actions.getPhone(this.state.phone)
+        this.props.actions.getPhone(this.state.phone);
+        Actions.home();
     }
     handleLoginCodePress(){
       this.props.actions.getLoginCode(this.state.phone);
